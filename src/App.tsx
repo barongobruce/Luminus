@@ -1,9 +1,19 @@
 import { useEffect, useState } from "react";
 import { PulsingLoader } from "./components/PulsingLoader";
+import { AboutSection } from "./components/AboutSection";
+import { SiteFooter } from "./components/SiteFooter";
+import { CreativeDivisionSection } from "./components/CreativeDivisionSection";
+import { DigitalDivisionSection } from "./components/DigitalDivisionSection";
+import { ExperienceDivisionSection } from "./components/ExperienceDivisionSection";
 
 type Theme = "light" | "dark";
 
 const navItems = ["Home", "About", "Divisions", "Blog", "Contacts", "Footer"] as const;
+const pageRoutes: Partial<Record<(typeof navItems)[number], string>> = {
+  Home: "/",
+  About: "/about",
+  Divisions: "/divisions",
+};
 
 const divisions = [
   {
@@ -71,10 +81,61 @@ function ThemeIcon({ theme }: { theme: Theme }) {
   );
 }
 
+function HeroVisual() {
+  return (
+    <section className="hero-visual" id="division-showcase" aria-label="Luminus divisions">
+      <div className="visual-orbit visual-orbit--outer" aria-hidden="true" />
+      <div className="visual-orbit visual-orbit--inner" aria-hidden="true" />
+      <span className="visual-index" aria-hidden="true">L / 03</span>
+
+      <div className="light-card">
+        <div className="light-card-topline">
+          <span>THE LUMINUS IDEA</span>
+          <span>EST. FOR WHAT’S NEXT</span>
+        </div>
+        <div className="light-card-sun" aria-hidden="true">
+          <span className="sun-core" />
+          <span className="sun-ray sun-ray--one" />
+          <span className="sun-ray sun-ray--two" />
+          <span className="sun-ray sun-ray--three" />
+        </div>
+        <div className="light-card-title" aria-hidden="true">
+          <span>MAKE</span>
+          <span>IT</span>
+          <em>MATTER.</em>
+        </div>
+        <div className="light-card-footer">
+          <span>STRATEGY · STORY · DIGITAL</span>
+          <span className="footer-star" aria-hidden="true">✳</span>
+        </div>
+      </div>
+
+      <div className="division-cards">
+        {divisions.map((division) => (
+          <article className={`division-card division-card--${division.className}`} key={division.id}>
+            <div className="division-card-meta">
+              <span>{division.number} / DIVISION</span>
+              <span className="division-card-arrow" aria-hidden="true">↗</span>
+            </div>
+            <h2>{division.title}</h2>
+            <p>{division.services}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="visual-caption" aria-hidden="true">
+        <span className="caption-dot" /> A brighter kind of growth
+      </div>
+    </section>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState<Theme>(readSavedTheme);
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const currentPage = currentPath === "/about" ? "About" : currentPath === "/divisions" ? "Divisions" : "Home";
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -110,17 +171,19 @@ function App() {
           </div>
 
           <nav id="mobile-menu" className={`nav-links${isMenuOpen ? " nav-links--open" : ""}`} aria-label="Main menu">
-            {navItems.map((item) => (
-              <button
-                className={`nav-link${item === "Home" ? " nav-link--active" : ""}`}
-                type="button"
-                key={item}
-                aria-current={item === "Home" ? "page" : undefined}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const href = pageRoutes[item];
+              const className = `nav-link${item === currentPage ? " nav-link--active" : ""}`;
+              return href ? (
+                <a className={className} href={href} key={item} aria-current={item === currentPage ? "page" : undefined}>
+                  {item}
+                </a>
+              ) : (
+                <button className={className} type="button" key={item} onClick={() => setIsMenuOpen(false)}>
+                  {item}
+                </button>
+              );
+            })}
           </nav>
 
           <button
@@ -149,78 +212,52 @@ function App() {
         </div>
       </header>
 
-      <main className="hero-layout">
-        <section className="hero-copy" aria-labelledby="hero-title">
-          <p className="eyebrow"><span className="eyebrow-dot" /> creative agency</p>
-          <h1 id="hero-title" aria-label="Bringing Brands into the light.">
-            <span aria-hidden="true">Bringing Brands</span>
-            <span className="hero-title-second" aria-hidden="true">into the <em>light.</em></span>
-          </h1>
-          <p className="hero-description">
-            We illuminate business potential through strategic marketing, creative storytelling,
-            and innovative digital solutions that make brands impossible to overlook.
-          </p>
+      {currentPage === "Home" && (
+        <main className="hero-layout">
+          <section className="hero-copy" aria-labelledby="hero-title">
+            <p className="eyebrow"><span className="eyebrow-dot" /> creative agency</p>
+            <h1 id="hero-title" aria-label="Bringing Brands into the light.">
+              <span aria-hidden="true">illuminate</span>
+              <span className="hero-title-second" aria-hidden="true"><em>possibilities.</em></span>
+            </h1>
+            <p className="hero-description">
+              We illuminate business potential through strategic marketing, creative storytelling,
+              and innovative digital solutions that make brands impossible to overlook.
+            </p>
 
-          <div className="hero-actions" aria-label="Explore Luminus">
-            <button className="button button--primary" type="button">
-              Start a project <ArrowIcon />
-            </button>
-            <button className="button button--secondary" type="button" onClick={scrollToDivisions}>
-              Meet the divisions <span aria-hidden="true" className="button-spark">↗</span>
-            </button>
-          </div>
-
-          <div className="hero-footnote">
-            <span className="footnote-rule" aria-hidden="true" />
-            <span>Clarity. Creativity. Growth.</span>
-          </div>
-        </section>
-
-        <section className="hero-visual" id="division-showcase" aria-label="Luminus divisions">
-          <div className="visual-orbit visual-orbit--outer" aria-hidden="true" />
-          <div className="visual-orbit visual-orbit--inner" aria-hidden="true" />
-          <span className="visual-index" aria-hidden="true">L / 03</span>
-
-          <div className="light-card">
-            <div className="light-card-topline">
-              <span>THE LUMINUS IDEA</span>
-              <span>EST. FOR WHAT’S NEXT</span>
+            <div className="hero-actions" aria-label="Explore Luminus">
+              <button className="button button--primary" type="button">
+                Start a project <ArrowIcon />
+              </button>
+              <button className="button button--secondary" type="button" onClick={scrollToDivisions}>
+                Meet the divisions <span aria-hidden="true" className="button-spark">↗</span>
+              </button>
             </div>
-            <div className="light-card-sun" aria-hidden="true">
-              <span className="sun-core" />
-              <span className="sun-ray sun-ray--one" />
-              <span className="sun-ray sun-ray--two" />
-              <span className="sun-ray sun-ray--three" />
-            </div>
-            <div className="light-card-title" aria-hidden="true">
-              <span>MAKE</span>
-              <span>IT</span>
-              <em>MATTER.</em>
-            </div>
-            <div className="light-card-footer">
-              <span>STRATEGY · STORY · DIGITAL</span>
-              <span className="footer-star" aria-hidden="true">✳</span>
-            </div>
-          </div>
 
-          <div className="division-cards">
-            {divisions.map((division) => (
-              <article className={`division-card division-card--${division.className}`} key={division.id}>
-                <div className="division-card-meta">
-                  <span>{division.number} / DIVISION</span>
-                  <span className="division-card-arrow" aria-hidden="true">↗</span>
-                </div>
-                <h2>{division.title}</h2>
-                <p>{division.services}</p>
-              </article>
-            ))}
-          </div>
+            <div className="hero-footnote">
+              <span className="footnote-rule" aria-hidden="true" />
+              <span>Clarity. Creativity. Growth.</span>
+            </div>
+          </section>
+          <HeroVisual />
+        </main>
+      )}
 
-          <div className="visual-caption" aria-hidden="true">
-            <span className="caption-dot" /> A brighter kind of growth
-          </div>
-        </section>
-      </main>
+      {currentPage === "About" && (
+        <main className="page-main page-main--about">
+          <AboutSection />
+        </main>
+      )}
+
+      {currentPage === "Divisions" && (
+        <>
+          <CreativeDivisionSection />
+          <DigitalDivisionSection />
+          <ExperienceDivisionSection />
+        </>
+      )}
+
+      <SiteFooter />
 
       {isLoading && <PulsingLoader fullScreen label="Luminus is getting ready" />}
     </div>

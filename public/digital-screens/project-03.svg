@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Digital project 03 screenshot placeholder</title>
+  <desc id="desc">A clean web-app dashboard placeholder with generic interface components.</desc>
+  <rect width="1440" height="900" fill="#f1f3f4"/>
+  <rect width="1440" height="75" fill="#fff"/>
+  <path d="M0 74.5h1440" stroke="#dfe2e4"/>
+  <rect x="30" y="22" width="31" height="31" rx="8" fill="#35433d"/>
+  <path d="M39 38h14M46 31v14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <text x="78" y="47" fill="#29302d" font-family="Arial,sans-serif" font-size="21" font-weight="700">PROJECT 03</text>
+  <rect x="1198" y="19" width="180" height="37" rx="18" fill="#eef0ed"/>
+  <circle cx="1221" cy="37" r="10" fill="#aeb8b0"/>
+  <text x="1240" y="42" fill="#606a63" font-family="Arial,sans-serif" font-size="13">PREVIEW ACCOUNT</text>
+  <rect x="0" y="75" width="248" height="825" fill="#fff"/>
+  <path d="M247.5 75v825" stroke="#e0e3e4"/>
+  <text x="32" y="126" fill="#8d9690" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">WORKSPACE</text>
+  <rect x="24" y="151" width="199" height="42" rx="8" fill="#edf1ed"/>
+  <circle cx="47" cy="172" r="7" fill="#718477"/>
+  <text x="66" y="177" fill="#34443a" font-family="Arial,sans-serif" font-size="15" font-weight="700">Overview</text>
+  <text x="66" y="231" fill="#757d78" font-family="Arial,sans-serif" font-size="15">Projects</text>
+  <text x="66" y="281" fill="#757d78" font-family="Arial,sans-serif" font-size="15">Reports</text>
+  <text x="66" y="331" fill="#757d78" font-family="Arial,sans-serif" font-size="15">Settings</text>
+  <text x="299" y="139" fill="#7d8780" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="3">REPLACEABLE APP SCREENSHOT</text>
+  <text x="294" y="205" fill="#28312c" font-family="Arial,sans-serif" font-size="38" font-weight="700">Dashboard</text>
+  <rect x="1173" y="163" width="183" height="42" rx="8" fill="#34433a"/>
+  <text x="1202" y="189" fill="#fff" font-family="Arial,sans-serif" font-size="14" font-weight="700">NEW PROJECT　+</text>
+  <g fill="#fff" stroke="#dfe3e0">
+    <rect x="296" y="239" width="328" height="130" rx="12"/><rect x="650" y="239" width="328" height="130" rx="12"/><rect x="1004" y="239" width="352" height="130" rx="12"/>
+    <rect x="296" y="395" width="658" height="388" rx="12"/><rect x="979" y="395" width="377" height="388" rx="12"/>
+  </g>
+  <text x="320" y="274" fill="#838d86" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">ACTIVE PROJECTS</text>
+  <text x="320" y="334" fill="#303a33" font-family="Arial,sans-serif" font-size="40" font-weight="700">08</text>
+  <text x="674" y="274" fill="#838d86" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">COMPLETED</text>
+  <text x="674" y="334" fill="#303a33" font-family="Arial,sans-serif" font-size="40" font-weight="700">24</text>
+  <text x="1028" y="274" fill="#838d86" font-family="Arial,sans-serif" font-size="13" letter-spacing="1">RECENT ACTIVITY</text>
+  <text x="1028" y="334" fill="#303a33" font-family="Arial,sans-serif" font-size="26" font-weight="700">Today</text>
+  <text x="324" y="439" fill="#374039" font-family="Arial,sans-serif" font-size="17" font-weight="700">Performance overview</text>
+  <path d="M348 709h548M348 642h548M348 575h548M348 508h548" stroke="#e6e9e6"/>
+  <path d="m357 672 86-48 78 20 82-101 84 44 93-93 102 25" fill="none" stroke="#738878" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="780" cy="494" r="7" fill="#738878"/>
+  <text x="1009" y="439" fill="#374039" font-family="Arial,sans-serif" font-size="17" font-weight="700">Recent projects</text>
+  <g fill="#edf0ed"><rect x="1008" y="474" width="318" height="63" rx="8"/><rect x="1008" y="552" width="318" height="63" rx="8"/><rect x="1008" y="630" width="318" height="63" rx="8"/></g>
+  <g fill="#718477"><circle cx="1034" cy="505" r="11"/><circle cx="1034" cy="583" r="11"/><circle cx="1034" cy="661" r="11"/></g>
+  <text x="77" y="855" fill="#858c86" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">SCREENSHOT PLACEHOLDER / 03</text>
+</svg>

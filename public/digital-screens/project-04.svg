@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Digital project 04 screenshot placeholder</title>
+  <desc id="desc">A crisp modern website placeholder in cobalt blue and soft white.</desc>
+  <rect width="1440" height="900" fill="#f6f7fa"/>
+  <rect width="1440" height="88" fill="#f6f7fa"/>
+  <text x="74" y="55" fill="#202632" font-family="Arial,sans-serif" font-size="23" font-weight="700" letter-spacing="4">PROJECT 04</text>
+  <text x="928" y="54" fill="#596171" font-family="Arial,sans-serif" font-size="14" letter-spacing="2">DISCOVER　 APPROACH　 INSIGHTS　 CONTACT</text>
+  <rect x="0" y="88" width="1440" height="812" fill="#dfe5f1"/>
+  <rect x="0" y="88" width="1440" height="812" fill="#3159a8" opacity=".08"/>
+  <text x="91" y="188" fill="#40577f" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="5">REPLACEABLE WEBSITE PREVIEW</text>
+  <text x="86" y="313" fill="#172742" font-family="Arial,sans-serif" font-size="77" font-weight="700" letter-spacing="-4">Made for</text>
+  <text x="86" y="399" fill="#172742" font-family="Arial,sans-serif" font-size="77" font-weight="700" letter-spacing="-4">what&apos;s next.</text>
+  <text x="90" y="468" fill="#586987" font-family="Arial,sans-serif" font-size="20">Screenshot placeholder</text>
+  <text x="90" y="503" fill="#6b7890" font-family="Arial,sans-serif" font-size="16">Replace with the finished website capture.</text>
+  <rect x="91" y="558" width="185" height="52" rx="26" fill="#3159a8"/>
+  <text x="122" y="591" fill="#fff" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">EXPLORE MORE　↗</text>
+  <rect x="776" y="161" width="546" height="564" rx="16" fill="#3159a8"/>
+  <circle cx="1048" cy="431" r="199" fill="#c8d8f1"/>
+  <circle cx="1048" cy="431" r="140" fill="#eff3f9"/>
+  <path d="M916 480c59-94 115-143 172-143 57 0 99 36 126 108-37 89-98 142-183 161-47-25-85-67-115-126Z" fill="#8ba7d1"/>
+  <circle cx="1048" cy="431" r="34" fill="#3159a8"/>
+  <rect x="812" y="755" width="476" height="54" rx="8" fill="#fff" opacity=".72"/>
+  <rect x="838" y="776" width="124" height="11" rx="5.5" fill="#cbd3e0"/>
+  <rect x="980" y="776" width="124" height="11" rx="5.5" fill="#cbd3e0"/>
+  <rect x="1122" y="776" width="124" height="11" rx="5.5" fill="#cbd3e0"/>
+  <text x="77" y="855" fill="#71809a" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">SCREENSHOT PLACEHOLDER / 04</text>
+</svg>

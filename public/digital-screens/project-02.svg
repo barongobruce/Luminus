@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">Digital project 02 screenshot placeholder</title>
+  <desc id="desc">A dark, high-contrast digital landing page placeholder.</desc>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#17191d"/><stop offset="1" stop-color="#30333a"/></linearGradient>
+    <linearGradient id="flare" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d1ae83"/><stop offset="1" stop-color="#725640"/></linearGradient>
+  </defs>
+  <rect width="1440" height="900" fill="url(#night)"/>
+  <text x="75" y="54" fill="#f2eee8" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="4">PROJECT 02</text>
+  <text x="977" y="53" fill="#c6c2bd" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">WORK　 STUDIO　 JOURNAL　 CONTACT</text>
+  <path d="M76 82h1288" stroke="#77736f" opacity=".45"/>
+  <text x="86" y="196" fill="#c6a986" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="5">REPLACEABLE WEBSITE PREVIEW</text>
+  <text x="82" y="355" fill="#f6f2ec" font-family="Arial,sans-serif" font-size="91" font-weight="700" letter-spacing="-4">A bold new</text>
+  <text x="82" y="449" fill="#f6f2ec" font-family="Arial,sans-serif" font-size="91" font-weight="700" letter-spacing="-4">perspective.</text>
+  <rect x="89" y="505" width="82" height="3" fill="#c6a986"/>
+  <text x="88" y="567" fill="#c7c3be" font-family="Arial,sans-serif" font-size="21">Screenshot placeholder</text>
+  <text x="88" y="604" fill="#97938e" font-family="Arial,sans-serif" font-size="17">Replace with the finished website capture.</text>
+  <circle cx="1055" cy="454" r="272" fill="#282a2e" stroke="#716356" stroke-width="2"/>
+  <circle cx="1055" cy="454" r="218" fill="url(#flare)"/>
+  <path d="M884 545c47-171 121-253 221-253 52 0 103 29 140 86-33 140-112 232-236 277-47-23-88-60-125-110Z" fill="#4b4138" opacity=".83"/>
+  <circle cx="1056" cy="453" r="83" fill="#e2d4c3" opacity=".78"/>
+  <rect x="88" y="690" width="1264" height="1" fill="#77736f" opacity=".55"/>
+  <text x="88" y="737" fill="#f4f0eb" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">01　 DESIGN</text>
+  <text x="465" y="737" fill="#f4f0eb" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">02　 DEVELOPMENT</text>
+  <text x="916" y="737" fill="#f4f0eb" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">03　 EXPERIENCE</text>
+  <text x="77" y="855" fill="#96918a" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">SCREENSHOT PLACEHOLDER / 02</text>
+</svg>
