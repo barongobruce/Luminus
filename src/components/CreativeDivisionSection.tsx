@@ -128,7 +128,7 @@ export function CreativeDivisionSection() {
                 <span className="creative-phone-right-button" />
                 <span className="creative-phone-frame">
                   <span className="creative-phone-screen">
-                    <img className="creative-phone-poster" src={project.poster} alt="" loading="lazy" />
+                    <img className="creative-phone-poster" src={project.poster} alt="" loading={index === 0 ? "eager" : "lazy"} decoding="async" fetchPriority={index === 0 ? "high" : "auto"} />
                     <span className="creative-phone-shade" />
                     <span className="creative-phone-status">
                       <span>9:41</span>

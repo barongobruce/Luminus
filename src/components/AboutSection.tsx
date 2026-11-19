@@ -3,10 +3,10 @@ import "./AboutSection.css";
 
 // Replace these four src values to change the About carousel images.
 const aboutSlides = [
-  { src: "/demo1.png", alt: "Gordon's gin beverage campaign" },
-  { src: "/demo2.png", alt: "Luxury perfume product campaign" },
-  { src: "/demo3.png", alt: "Kenyan coffee product campaign" },
-  { src: "/demo4.png", alt: "Skincare serum campaign" },
+  { src: "/optimized/demo1.webp", alt: "Gordon's gin beverage campaign" },
+  { src: "/optimized/demo2.webp", alt: "Luxury perfume product campaign" },
+  { src: "/optimized/demo3.webp", alt: "Kenyan coffee product campaign" },
+  { src: "/optimized/demo4.webp", alt: "Skincare serum campaign" },
 ];
 
 export function AboutSection() {
@@ -54,7 +54,7 @@ export function AboutSection() {
                 <span className="about-promise-mark" aria-hidden="true">✳</span>
                 <p>Think of us as your marketing team, <em>without the in-house overhead.</em></p>
               </div>
-              <a className="about-cta" href="#contacts">
+              <a className="about-cta" href="/contact">
                 Start a partnership <span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -70,6 +70,9 @@ export function AboutSection() {
                     alt={index === activeSlide ? slide.alt : ""}
                     aria-hidden={index !== activeSlide}
                     key={slide.src}
+                    loading={index === activeSlide ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={index === activeSlide ? "high" : "low"}
                   />
                 ))}
               </div>

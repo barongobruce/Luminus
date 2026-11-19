@@ -13,25 +13,25 @@ const experienceProjects: ExperienceProject[] = [
   {
     number: "01",
     title: "Event Production & Setups",
-    image: "/experience-event-production.png",
+    image: "/optimized/experience-event-production.webp",
     alt: "Wide-angle premium corporate event setup with stage lighting and an unbranded backdrop.",
   },
   {
     number: "02",
     title: "Brand Activations",
-    image: "/experience-brand-activation.png",
+    image: "/optimized/experience-brand-activation.webp",
     alt: "Visitors exploring an elegant pop-up sampling booth in a contemporary venue.",
   },
   {
     number: "03",
     title: "Experiential Campaigns",
-    image: "/experience-experiential-campaign.png",
+    image: "/optimized/experience-experiential-campaign.webp",
     alt: "People interacting with an outdoor experiential installation in an urban plaza.",
   },
   {
     number: "04",
     title: "Influencer & Brand Collaborations",
-    image: "/experience-influencer-collaboration.png",
+    image: "/optimized/experience-influencer-collaboration.webp",
     alt: "A content creator filming an unbranded product experience at an intimate event.",
   },
 ];
@@ -110,7 +110,7 @@ export function ExperienceDivisionSection() {
               aria-haspopup="dialog"
             >
               <span className="experience-project-image-wrap">
-                <img src={project.image} alt={project.alt} loading={index === 0 ? "eager" : "lazy"} />
+                <img src={project.image} alt={project.alt} loading="lazy" decoding="async" />
                 <span className="experience-project-open" aria-hidden="true">↗</span>
               </span>
               <span className="experience-project-caption">
@@ -159,7 +159,7 @@ export function ExperienceDivisionSection() {
               <span aria-hidden="true">←</span>
             </button>
             <figure className="experience-lightbox-figure">
-              <img src={activeProject.image} alt={activeProject.alt} />
+              <img src={activeProject.image} alt={activeProject.alt} decoding="async" />
               <figcaption>
                 <span className="experience-project-number">{activeProject.number} / EXPERIENCE</span>
                 <span>{activeProject.title}</span>

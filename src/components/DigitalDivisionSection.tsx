@@ -10,10 +10,10 @@ type DigitalProject = {
 
 // Replace each screenshot and destination independently when the real project is ready.
 const digitalProjects: DigitalProject[] = [
-  { id: "01", title: "DIGITAL PROJECT / 01", description: "Replaceable website preview", screenshot: "/demo5.png", destination: "https://www.barongoacademy.co.ke/" },
-  { id: "02", title: "DIGITAL PROJECT / 02", description: "Replaceable website preview", screenshot: "/demo6.png", destination: "https://riversidetimbersuppliers.netlify.app/" },
-  { id: "03", title: "DIGITAL PROJECT / 03", description: "Replaceable website preview", screenshot: "/demo7.png", destination: "https://scissors-clip-spa.netlify.app/" },
-  { id: "04", title: "DIGITAL PROJECT / 04", description: "Replaceable website preview", screenshot: "/demo8.png", destination: "https://tagoption-tan.vercel.app/" },
+  { id: "01", title: "DIGITAL PROJECT / 01", description: "website preview", screenshot: "/optimized/demo5.webp", destination: "https://www.barongoacademy.co.ke/" },
+  { id: "02", title: "DIGITAL PROJECT / 02", description: "website preview", screenshot: "/optimized/demo6.webp", destination: "https://riversidetimbersuppliers.netlify.app/" },
+  { id: "03", title: "DIGITAL PROJECT / 03", description: "website preview", screenshot: "/optimized/demo7.webp", destination: "https://scissors-clip-spa.netlify.app/" },
+  { id: "04", title: "DIGITAL PROJECT / 04", description: "website preview", screenshot: "/optimized/demo8.webp", destination: "https://tagoption-tan.vercel.app/" },
 ];
 
 const digitalCapabilities = [
@@ -34,7 +34,7 @@ function DesktopMockup({ project }: { project: DigitalProject }) {
       aria-label={`Open ${project.title ?? `digital project ${project.id}`} in a new tab`}
     >
       <div className="digital-project-image">
-        <img src={project.screenshot} alt="" loading="lazy" />
+        <img src={project.screenshot} alt="" width={1536} height={1024} loading="lazy" decoding="async" />
       </div>
       <div className="digital-project-caption">
         <div>
