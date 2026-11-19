@@ -16,10 +16,10 @@
 
 .experience-project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3.5vw, 52px) clamp(18px, 2.4vw, 34px); align-items: start; }
 .experience-project { display: block; min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: zoom-in; }
-.experience-project-featured { grid-column: 1 / -1; }
+.experience-project-featured { grid-column: auto; }
 .experience-project:focus-visible { outline: 3px solid var(--accent); outline-offset: 8px; border-radius: 3px; }
 .experience-project-image-wrap { position: relative; display: block; overflow: hidden; aspect-ratio: 4 / 3; background: color-mix(in srgb, var(--ink) 7%, var(--page)); }
-.experience-project-featured .experience-project-image-wrap { aspect-ratio: 2.05 / 1; }
+.experience-project-featured .experience-project-image-wrap { aspect-ratio: 4 / 3; }
 .experience-project-image-wrap img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.2,.75,.25,1), filter 300ms ease; }
 .experience-project:hover .experience-project-image-wrap img { transform: scale(1.025); }
 .experience-project-open { position: absolute; right: 16px; bottom: 16px; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgb(255 255 255 / 62%); border-radius: 50%; background: rgb(15 15 15 / 38%); color: #fff; font-size: 1.2rem; opacity: 0; transform: translateY(5px); transition: opacity 220ms ease, transform 220ms ease, background-color 220ms ease; backdrop-filter: blur(6px); }

@@ -87,6 +87,7 @@ a.nav-link { display: inline-flex; align-items: center; justify-content: center;
 .button--primary:hover { background: var(--accent-hover); box-shadow: 0 13px 28px color-mix(in srgb, var(--accent) 27%, transparent); }
 .button--primary svg { width: 18px; height: 18px; box-sizing: content-box; padding: 4px; border-radius: 8px; background: rgba(21, 21, 21, 0.11); transition: transform 180ms ease; }
 .button--primary:hover svg { transform: translateX(3px); }
+.navbar-talk { min-height: 46px; flex: 0 0 auto; padding: 0 14px; border-radius: 13px; font-size: 0.76rem; letter-spacing: 0.045em; text-decoration: none; white-space: nowrap; }
 .button--secondary { border-color: var(--line); background: transparent; color: var(--ink); }
 .button--secondary:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, var(--page)); }
 .button-spark { color: var(--accent); font-size: 1.2rem; }
@@ -162,6 +163,7 @@ a.nav-link { display: inline-flex; align-items: center; justify-content: center;
   .navbar:has(.nav-links--open) { border-radius: 24px; }
   .nav-link { width: 100%; min-height: 42px; padding: 0 13px; text-align: left; }
   a.nav-link { justify-content: flex-start; }
+  .navbar-talk { align-self: flex-start; margin-top: 7px; }
   .nav-link--active { background: color-mix(in srgb, var(--ink) 6%, var(--page)); }
   .theme-toggle { grid-column: 2; grid-row: 1; justify-self: center; min-width: 40px; min-height: 40px; gap: 0; padding: 0; border: 0; background: transparent; }
   .theme-toggle span { display: none; }
@@ -208,3 +210,97 @@ a.nav-link { display: inline-flex; align-items: center; justify-content: center;
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+
+
+/* Luminus asymmetric design system: retain the warm brand palette and typography. */
+:root {
+  --radius-image: clamp(1.35rem, 2.7vw, 1.8rem) 0.35rem clamp(1.35rem, 2.7vw, 1.8rem) 0.35rem;
+  --radius-card: clamp(1.4rem, 2.8vw, 2.2rem) 0.4rem clamp(1.4rem, 2.8vw, 2.2rem) 0.4rem;
+  --radius-panel: clamp(1.45rem, 3.2vw, 3rem) 0.5rem clamp(1.45rem, 3.2vw, 3rem) 0.5rem;
+  --radius-nav: clamp(1.25rem, 2.5vw, 2rem) 0.7rem clamp(1.25rem, 2.5vw, 2rem) 0.7rem;
+  --radius-control: 1.2rem 0.35rem 1.2rem 0.35rem;
+  --radius-icon: 0.9rem 0.25rem 0.9rem 0.25rem;
+}
+
+/* Keep the navigation floating and sticky at every breakpoint. */
+.site-shell { overflow: clip; }
+.site-header { position: sticky; top: 12px; z-index: 30; }
+.navbar {
+  border-radius: var(--radius-nav);
+  border-color: color-mix(in srgb, var(--ink) 14%, transparent);
+  background: color-mix(in srgb, var(--page) 84%, transparent);
+  box-shadow: 0 15px 42px rgba(24, 20, 14, 0.11), inset 0 1px rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+}
+.navbar:has(.nav-links--open) { border-radius: var(--radius-panel); }
+.nav-link { border-radius: var(--radius-control); }
+.nav-link--active {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, var(--accent) 9%, var(--page));
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 9%, transparent);
+}
+.nav-link--active:hover { color: var(--ink); }
+.theme-toggle, .mobile-menu-toggle, .brand-mark { border-radius: var(--radius-icon); }
+.mobile-menu-toggle { border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+
+/* Shared sculpted controls, with brand-color gradients and gentle press feedback. */
+.button, .about-cta, .site-footer-cta-button {
+  border-radius: var(--radius-control);
+  transition-timing-function: cubic-bezier(.2, .75, .25, 1);
+}
+.button--primary, .about-cta, .site-footer-cta-button {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 82%, white), var(--accent) 58%, var(--accent-hover));
+  box-shadow: 0 10px 25px color-mix(in srgb, var(--accent) 23%, transparent);
+}
+.button--primary:hover, .about-cta:hover, .site-footer-cta-button:hover {
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  box-shadow: 0 15px 30px color-mix(in srgb, var(--accent) 29%, transparent);
+  transform: translateY(-2px);
+}
+.button--secondary {
+  border-color: color-mix(in srgb, var(--ink) 15%, transparent);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, var(--card) 74%, transparent);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.32), 0 8px 22px rgba(21, 21, 21, 0.045);
+  backdrop-filter: blur(10px);
+}
+.button--secondary:hover { background: color-mix(in srgb, var(--accent) 8%, var(--card)); }
+.button:active, .about-cta:active, .site-footer-cta-button:active { transform: translateY(0) scale(0.985); }
+.navbar-talk { border-radius: var(--radius-control); }
+
+/* Images, cards, form panels and modal surfaces share the alternating corner motif. */
+.light-card { border: 1px solid rgba(255, 255, 255, 0.09); border-radius: var(--radius-panel); }
+.division-card { border: 1px solid color-mix(in srgb, var(--ink) 7%, transparent); border-radius: var(--radius-card); }
+.about-image-slot, .about-carousel { border-radius: var(--radius-image); }
+.about-image-slot { border-color: color-mix(in srgb, var(--ink) 12%, transparent); }
+.about-carousel { overflow: hidden; }
+.about-carousel-arrow, .experience-project-open, .experience-lightbox-close, .experience-lightbox-nav,
+.creative-phone-play, .creative-player-close, .division-card-arrow, .digital-project-arrow,
+.contact-whatsapp-fab { border-radius: var(--radius-icon); }
+.about-image-slot figcaption, .creative-player-placeholder-note { border-radius: var(--radius-control); }
+.creative-project-trigger:focus-visible, .digital-project-link:focus-visible,
+.experience-project:focus-visible { border-radius: var(--radius-card); }
+.creative-player-dialog { border-radius: var(--radius-panel); }
+.digital-project-image {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+  border-radius: var(--radius-image);
+  background: var(--card);
+  box-shadow: 0 18px 42px rgba(24, 20, 14, 0.1);
+}
+.digital-project-image img { border-radius: inherit; }
+.experience-project-image-wrap {
+  border: 1px solid color-mix(in srgb, var(--ink) 11%, transparent);
+  border-radius: var(--radius-image);
+  box-shadow: 0 18px 42px rgba(24, 20, 14, 0.09);
+}
+.contact-form-panel {
+  border-radius: var(--radius-panel);
+  box-shadow: 0 20px 58px rgba(24, 20, 14, 0.09), inset 0 1px rgba(255, 255, 255, 0.28);
+}
+.contact-field input, .contact-field select, .contact-field textarea { border-radius: 0.95rem 0.28rem 0.95rem 0.28rem; }
+.contact-whatsapp-fab { border-color: rgba(255, 255, 255, 0.72); }
+.site-footer { border-radius: 2.2rem 0.45rem 0 0; }

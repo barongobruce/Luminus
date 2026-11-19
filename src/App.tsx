@@ -5,14 +5,16 @@ import { SiteFooter } from "./components/SiteFooter";
 import { CreativeDivisionSection } from "./components/CreativeDivisionSection";
 import { DigitalDivisionSection } from "./components/DigitalDivisionSection";
 import { ExperienceDivisionSection } from "./components/ExperienceDivisionSection";
+import { ContactSection, WhatsAppFloatingButton } from "./components/ContactSection";
 
 type Theme = "light" | "dark";
 
-const navItems = ["Home", "About", "Divisions", "Blog", "Contacts", "Footer"] as const;
+const navItems = ["Home", "About", "Divisions", "Contact"] as const;
 const pageRoutes: Partial<Record<(typeof navItems)[number], string>> = {
   Home: "/",
   About: "/about",
   Divisions: "/divisions",
+  Contact: "/contact",
 };
 
 const divisions = [
@@ -135,7 +137,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
-  const currentPage = currentPath === "/about" ? "About" : currentPath === "/divisions" ? "Divisions" : "Home";
+  const currentPage = currentPath === "/about" ? "About" : currentPath === "/divisions" ? "Divisions" : currentPath === "/contact" ? "Contact" : "Home";
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -153,9 +155,6 @@ function App() {
   }, []);
 
   const toggleTheme = () => setTheme((current) => (current === "light" ? "dark" : "light"));
-  const scrollToDivisions = () => {
-    document.getElementById("division-showcase")?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
 
   return (
     <div className="site-shell">
@@ -173,9 +172,10 @@ function App() {
           <nav id="mobile-menu" className={`nav-links${isMenuOpen ? " nav-links--open" : ""}`} aria-label="Main menu">
             {navItems.map((item) => {
               const href = pageRoutes[item];
-              const className = `nav-link${item === currentPage ? " nav-link--active" : ""}`;
+              const isActive = item === currentPage;
+              const className = `nav-link${isActive ? " nav-link--active" : ""}`;
               return href ? (
-                <a className={className} href={href} key={item} aria-current={item === currentPage ? "page" : undefined}>
+                <a className={className} href={href} key={item} onClick={() => setIsMenuOpen(false)} aria-current={isActive ? "page" : undefined}>
                   {item}
                 </a>
               ) : (
@@ -184,6 +184,9 @@ function App() {
                 </button>
               );
             })}
+            <a className="button button--primary navbar-talk" href="/contact" onClick={() => setIsMenuOpen(false)}>
+              LET'S TALK <ArrowIcon />
+            </a>
           </nav>
 
           <button
@@ -226,12 +229,12 @@ function App() {
             </p>
 
             <div className="hero-actions" aria-label="Explore Luminus">
-              <button className="button button--primary" type="button">
+              <a className="button button--primary" href="/contact">
                 Start a project <ArrowIcon />
-              </button>
-              <button className="button button--secondary" type="button" onClick={scrollToDivisions}>
-                Meet the divisions <span aria-hidden="true" className="button-spark">↗</span>
-              </button>
+              </a>
+              <a className="button button--secondary" href="/divisions">
+                View our works <span aria-hidden="true" className="button-spark">↗</span>
+              </a>
             </div>
 
             <div className="hero-footnote">
@@ -257,7 +260,13 @@ function App() {
         </>
       )}
 
+      {currentPage === "Contact" && (
+        <main className="page-main page-main--contact">
+          <ContactSection />
+        </main>
+      )}
       <SiteFooter />
+      <WhatsAppFloatingButton />
 
       {isLoading && <PulsingLoader fullScreen label="Luminus is getting ready" />}
     </div>

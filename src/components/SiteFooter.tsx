@@ -20,15 +20,13 @@ const socialLinks = [
   { label: "TikTok", href: "" },
 ];
 
-const partnershipEmail = "mailto:luminusagency@gmail.com?subject=Let%27s%20work%20together";
-
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
         <section className="site-footer-cta" aria-labelledby="site-footer-title">
           <h2 id="site-footer-title">Let&apos;s make your brand impossible to ignore.</h2>
-          <a className="site-footer-cta-button" href={partnershipEmail}>
+          <a className="site-footer-cta-button" href="/contact">
             LET&apos;S WORK TOGETHER <span aria-hidden="true">↗</span>
           </a>
         </section>
